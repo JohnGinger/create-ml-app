@@ -7,21 +7,45 @@ app = typer.Typer()
 @app.callback()
 def callback():
     """
-    Awesome Portal Gun
+    Pegasus
     """
 
 
 @app.command()
-def shoot():
+def train():
     """
-    Shoot the portal gun
+    Trains a pytorch lighting file
     """
-    typer.echo("Shooting portal gun")
+    typer.echo("Training")
 
 
 @app.command()
-def load():
+def configure():
     """
-    Load the portal gun
+    Sets where you want to upload/host your models
     """
-    typer.echo("Loading portal gun")
+    typer.echo("Configuring")
+
+
+@app.command()
+def list_models():
+    """
+    Lists the models in your account
+    """
+    typer.echo("Listing")
+
+
+@app.command()
+def deploy():
+    """
+    Deploys a model
+    """
+    typer.echo("Deploying")
+
+
+@app.command()
+def delete():
+    """
+    Stops hosting a model
+    """
+    typer.echo("Deleting")

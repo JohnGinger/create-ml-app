@@ -3,6 +3,7 @@ import boto3
 from datetime import datetime
 import os
 import zipfile
+from pathlib import Path
 
 
 def zipdir(path, ziph):
@@ -26,7 +27,7 @@ def upload_file(file_name, bucket, object_name=None):
         object_name = file_name
 
     # Upload the file
-    s3_client = boto3.client('s3')
+    s3_client = boto3.client("s3")
     try:
         response = s3_client.upload_file(file_name, bucket, object_name)
     except Exception as e:
@@ -35,7 +36,7 @@ def upload_file(file_name, bucket, object_name=None):
 
 
 def run_train(path_to_zip: str):
-    filepath = f"ml-training/{__file__}/{datetime.now().timestamp()}"
+    filepath = f"ml-training/{Path(__file__).stem}/{datetime.now().timestamp()}"
     s3_code_path = f"{filepath}/code.zip"
     typer.echo(f"Compressing {path_to_zip}")
 
@@ -51,10 +52,10 @@ def run_train(path_to_zip: str):
 
     batch = boto3.client("batch")
     command = "pip install pegasusapp && pegasus pull_code_and_unzip".split(" ")
-    command.append(f"{filepath}")
+    command.append(f"{path_for_docker}")
     batch.submit_job(
-        jobName=filepath,
+        jobName="test1",
         jobQueue="general-job-queue",
         jobDefinition="ml-training",
-        command=command,
+        containerOverrides=dict(command=command),
     )

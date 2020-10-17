@@ -98,9 +98,10 @@ def cli_main():
     # training
     # ------------
 
-    checkpoint_callback = ModelCheckpoint(
-        filepath=f'{os.environ["S3_PREFIX"]}/sample-mnist-{epoch:02d}-{val_loss:.2f}'
-    )
+    filepath = "/sample-mnist-{epoch:02d}-{val_loss:.2f}"
+    print(f"S3 PREFIX: ", os.environ["S3_PREFIX"])
+    filepath = f'{os.environ["S3_PREFIX"]}' + filepath
+    checkpoint_callback = ModelCheckpoint(filepath=filepath)
     trainer = pl.Trainer.from_argparse_args(
         args, checkpoint_callback=checkpoint_callback
     )

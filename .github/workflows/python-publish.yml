@@ -6,7 +6,7 @@ name: Upload Python Package
 on:
   push:
       branches:
-        - master
+        - release
 
 jobs:
   deploy:
@@ -28,5 +28,4 @@ jobs:
         PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
       run: |
         poetry config pypi-token.pypi $PYPI_TOKEN
-        poetry version $GITHUB_SHA
         poetry publish --build

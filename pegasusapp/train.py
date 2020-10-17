@@ -6,14 +6,14 @@ import zipfile
 from pathlib import Path
 
 
-def zipdir(path, ziph):
+def zipdir(path, ziph: zipfile.ZipFile):
     # ziph is zipfile handle
     for root, dirs, files in os.walk(path):
         for file in files:
             ziph.write(os.path.join(root, file))
 
 
-def upload_file(file_name, bucket, object_name=None):
+def upload_file(file_name: str, bucket: str, object_name: str = None):
     """Upload a file to an S3 bucket
 
     :param file_name: File to upload

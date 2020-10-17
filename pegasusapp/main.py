@@ -51,7 +51,10 @@ def delete():
     typer.echo("Deleting")
 
 
-# @app.command()
-# # def pull_code_and_unzip():
-
+@app.command()
+def pull_code_and_unzip():
+    """
+    Pulls code from the S3 repository and runs it
+    """
+    typer.echo("Pulling code")
 

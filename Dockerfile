@@ -28,18 +28,26 @@ RUN curl "https://repo.anaconda.com/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.s
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
     rm -rf ~/.cache ~/miniconda.sh
 
-# split the conda installations because the dev boxes have limited memory
-RUN /opt/conda/bin/conda create -n env -c conda-forge python=$PYTHONVERSION pip && \
-    /opt/conda/bin/conda clean -a && \
-    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
-    echo ". /opt/conda/etc/profile.d/conda.sh" > ~/.env && \
-    echo "conda activate env" >> ~/.env && \
-    echo "source ~/.env" >> ~/.bashrc
+## split the conda installations because the dev boxes have limited memory
+#RUN /opt/conda/bin/conda create -n env -c conda-forge python=$PYTHONVERSION pip && \
+#    /opt/conda/bin/conda clean -a && \
+#    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+#    echo ". /opt/conda/etc/profile.d/conda.sh" > ~/.env && \
+#    echo "conda activate env" >> ~/.env && \
+#    echo "source ~/.env" >> ~/.bashrc
 
-ENV BASH_ENV=~/.env
-SHELL ["/bin/bash", "-c"]
+#RUN /opt/conda/bin/conda install conda-build \
+# && /opt/conda/bin/conda create -y --name py36 python=$PYTHONVERSION \
+# && /opt/conda/bin/conda clean -ya
+#ENV CONDA_DEFAULT_ENV=py36
+#ENV CONDA_PREFIX=/opt/conda/envs/$CONDA_DEFAULT_ENV
+#ENV PATH=$CONDA_PREFIX/bin:$PATH
+
+#ENV BASH_ENV=~/.env
+#SHELL ["/bin/bash", "-c"]
 
 RUN pip install poetry
+RUN pip install black
 
 COPY . /app
 WORKDIR /app
@@ -49,6 +57,7 @@ RUN poetry install
 #
 #CMD /bin/bash ./run.sh
 #
-#FROM ubuntu:14.04
+#FROM python:3.7
+#RUN pip install black
 #COPY ./run.sh /
 ##CMD /bin/bash ./run.sh

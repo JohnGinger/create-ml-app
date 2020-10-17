@@ -62,10 +62,10 @@ def pull_code_and_unzip(filepath: str):
     Pulls code from the S3 repository and runs it
     """
     s3 = boto3.client("s3")
-    bucket, key = destructure_s3_url(filepath)
+    bucket, key = destructure_s3_url(filepath, log=True)
     code_key = osp.join(key, "code.zip")
-    with open("/tmp/code.zip", "wb") as f:
-        s3.download_fileobj(bucket, code_key, f)
+    typer.echo(code_key)
+    s3.download_file(bucket, code_key, "/tmp/code.zip")
 
     with zipfile.ZipFile("/tmp/code.zip", "r") as zip_ref:
         zip_ref.extractall("/tmp/extracted_code")

@@ -6,14 +6,14 @@ import zipfile
 from pathlib import Path
 
 
-def zipdir(path, ziph):
+def zipdir(path, ziph: zipfile.ZipFile):
     # ziph is zipfile handle
     for root, dirs, files in os.walk(path):
         for file in files:
             ziph.write(os.path.join(root, file))
 
 
-def upload_file(file_name, bucket, object_name=None):
+def upload_file(file_name: str, bucket: str, object_name: str = None):
     """Upload a file to an S3 bucket
 
     :param file_name: File to upload
@@ -51,7 +51,7 @@ def run_train(path_to_zip: str):
     typer.echo(f"Would now call docker container with env var {path_for_docker}")
 
     batch = boto3.client("batch")
-    command = "pip install pegasusapp && pegasus pull_code_and_unzip".split(" ")
+    command = "pip install pegasusapp && pegasus pull-code-and-unzip".split(" ")
     command.append(f"{path_for_docker}")
     batch.submit_job(
         jobName="test1",

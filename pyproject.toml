@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "pegasusapp"
-version = "0.2.2"
+version = "0.2.6"
 description = ""
 authors = ["John Ginger <john@johnginger.co.uk>"]
 readme = "README.md"
+include = ["pegasus_run.sh"]
 
 [tool.poetry.scripts]
 pegasus = "pegasusapp.main:app"

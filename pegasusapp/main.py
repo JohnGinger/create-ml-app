@@ -1,5 +1,5 @@
 import typer
-
+from pegasusapp.train import run_train
 
 app = typer.Typer()
 
@@ -16,7 +16,7 @@ def train():
     """
     Trains a pytorch lighting file
     """
-    typer.echo("Training")
+    run_train.train()
 
 
 @app.command()

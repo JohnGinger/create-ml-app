@@ -18,12 +18,8 @@ import pytorch_lightning as pl
 from torch.nn import functional as F
 from torch.utils.data import DataLoader, random_split
 from pytorch_lightning.callbacks import ModelCheckpoint
-
-try:
-    from torchvision.datasets.mnist import MNIST
-    from torchvision import transforms
-except Exception as e:
-    from tests.base.datasets import MNIST
+from torchvision.datasets.mnist import MNIST
+from torchvision import transforms
 
 
 class LitClassifier(pl.LightningModule):

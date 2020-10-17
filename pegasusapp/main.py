@@ -72,26 +72,9 @@ def pull_code_and_unzip(filepath: str):
         zip_ref.extractall("/tmp/extracted_code")
 
     subprocess.run(["ls", "/tmp/extracted_code"])
-    #
-    # code = '''
-    # #!/usr/bin/env bash
-    #
-    # conda activate base
-    # pip install -r "$1"/requirements.txt
-    # python "$1"/train.py
-    # '''
-    # subprocess.run(["cat", f'"{code}"', ">>", "/tmp/extracted_code/pegasus_run.sh"])
-    # subprocess.run(["chmod", "+x", "/tmp/extracted_code/pegasus_run.sh"])
-    # subprocess.run(["ls", "/tmp/extracted_code"])
-
     subprocess.run(
         ["bash", "/tmp/extracted_code/pegasus_run.sh"],
         env={**os.environ, "S3_PREFIX": filepath},
     )
-
-    # def _build_command(command):
-    #     return f"bash -c '{command}'"
-    # subprocess.run(_build_command('conda init bash && conda activate base && pip install -r /tmp/extracted_code/requirements.txt'), shell=True)
-    # subprocess.run(_build_command('conda init bash && conda activate base && python /tmp/extracted_code/train.py'), shell=True)
 
     typer.echo("Pulling code")

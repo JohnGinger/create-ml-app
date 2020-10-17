@@ -6,7 +6,7 @@ authors = ["John Ginger <john@plural.ai>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-pegasus = "pegasus.main:app"
+pegasus = "pegasusapp.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.6"

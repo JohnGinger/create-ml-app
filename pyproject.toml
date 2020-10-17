@@ -11,6 +11,7 @@ pegasus = "pegasusapp.main:app"
 [tool.poetry.dependencies]
 python = "^3.6"
 typer = {extras = ["all"], version = "^0.1.0"}
+boto3 = "^1.15.18"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

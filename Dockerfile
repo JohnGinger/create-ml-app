@@ -1,3 +1,7 @@
 FROM pytorch/pytorch:1.6.0-cuda10.1-cudnn7-devel
 
-RUN run.sh
+COPY . /app
+WORKDIR /app
+
+
+RUN ./run.sh

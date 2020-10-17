@@ -12,11 +12,11 @@ def callback():
 
 
 @app.command()
-def train():
+def train(path_to_zip: str):
     """
     Trains a pytorch lighting file
     """
-    run_train.train()
+    run_train(path_to_zip)
 
 
 @app.command()

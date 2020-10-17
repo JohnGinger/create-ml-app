@@ -99,7 +99,7 @@ def cli_main():
     # ------------
 
     filepath = "/sample-mnist-{epoch:02d}-{val_loss:.2f}"
-    print(f"S3 PREFIX: ", os.environ["S3_PREFIX"])
+    print(f"S3 PREFIX: {os.environ['S3_PREFIX']}")
     filepath = f'{os.environ["S3_PREFIX"]}' + filepath
     checkpoint_callback = ModelCheckpoint(filepath=filepath)
     trainer = pl.Trainer.from_argparse_args(

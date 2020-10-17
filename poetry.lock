@@ -182,7 +182,7 @@ testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "7d63602559447d7bac8bbc479de7c428b3ad035732ce4e90bf5e0509e5947ea5"
+content-hash = "9f13bd1229126f7c930fc8fa3346d7a88e8640002f9f284a8bcc3aee02bbb576"
 
 [metadata.files]
 atomicwrites = [
@@ -240,6 +240,10 @@ six = [
 typer = [
     {file = "typer-0.1.1-py3-none-any.whl", hash = "sha256:e6fdb492c2f20d2d8123b8b2f4efa060770f92664aad8d36126f53dce501e9a8"},
     {file = "typer-0.1.1.tar.gz", hash = "sha256:180d746de86724f9f94e90fa95caa065b5af9b3b3c77fc9d4d4ca1b75adc0c01"},
+]
+versioneer = [
+    {file = "versioneer-0.18-py2.py3-none-any.whl", hash = "sha256:08e395c0acc544f78645b9c0ebfccaf47950ae61e0c85bd1aaea98ff59609aeb"},
+    {file = "versioneer-0.18.tar.gz", hash = "sha256:ead1f78168150011189521b479d3a0dd2f55c94f5b07747b484fd693c3fbf335"},
 ]
 wcwidth = [
     {file = "wcwidth-0.2.5-py2.py3-none-any.whl", hash = "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784"},

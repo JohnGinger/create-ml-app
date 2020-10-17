@@ -1,5 +1,5 @@
 import typer
 
 
-def train():
+def run_train():
     typer.echo("Training")

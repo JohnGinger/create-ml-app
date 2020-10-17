@@ -31,4 +31,9 @@ def run_train(path_to_zip: str):
     batch = boto3.client("batch")
     command = "pip install pegasusapp && pegasus pull_code_and_unzip".split(" ")
     command.append(f"{filepath}")
-    batch.submit_job(jobName=filepath, jobQueue="general-job-queue", command=command)
+    batch.submit_job(
+        jobName=filepath,
+        jobQueue="general-job-queue",
+        jobDefinition="ml-training",
+        command=command,
+    )

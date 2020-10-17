@@ -2,12 +2,17 @@ import typer
 import boto3
 from datetime import datetime
 import os
+import os.path as osp
 import zipfile
 from pathlib import Path
+import shutil
 
 
 def zipdir(path, ziph: zipfile.ZipFile):
     # ziph is zipfile handle
+
+    from_path = str(Path(__file__).parents[1].absolute() / "pegasus_run.sh")
+    ziph.write(from_path, arcname="./pegasus_run.sh")
     for root, dirs, files in os.walk(path):
         for file in files:
             ziph.write(os.path.join(root, file))

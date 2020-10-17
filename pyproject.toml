@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pegasus"
+name = "pegasusapp"
 version = "0.1.0"
 description = ""
 authors = ["John Ginger <john@plural.ai>"]

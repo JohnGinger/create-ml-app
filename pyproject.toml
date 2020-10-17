@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pegasusapp"
-version = "0.2.1"
+version = "0.2.2"
 description = ""
 authors = ["John Ginger <john@johnginger.co.uk>"]
 readme = "README.md"

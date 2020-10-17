@@ -49,3 +49,9 @@ def delete():
     Stops hosting a model
     """
     typer.echo("Deleting")
+
+
+# @app.command()
+# # def pull_code_and_unzip():
+
+

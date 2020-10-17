@@ -4,6 +4,7 @@
     <list default="true" id="9c7bb92b-a127-450c-847e-16e33afa31f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pegasusapp/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pegasusapp/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +22,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,5 +40,9 @@
       <screen x="0" y="0" width="3840" height="2124" />
     </state>
     <state x="1345" y="665" key="#Notifications/0.0.3840.2124@0.0.3840.2124" timestamp="1602940808102" />
+    <state x="787" y="247" key="SettingsEditor" timestamp="1602946302350">
+      <screen x="0" y="0" width="3840" height="2124" />
+    </state>
+    <state x="787" y="247" key="SettingsEditor/0.0.3840.2124@0.0.3840.2124" timestamp="1602946302350" />
   </component>
 </project>

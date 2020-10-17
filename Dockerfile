@@ -57,9 +57,9 @@ RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 #RUN poetry install
 
 #
-#CMD /bin/bash ./run.sh
+#CMD /bin/bash ./pegasus_run.sh
 #
 #FROM python:3.7
 #RUN pip install black
-#COPY ./run.sh /
-##CMD /bin/bash ./run.sh
+#COPY ./pegasus_run.sh /
+##CMD /bin/bash ./pegasus_run.sh

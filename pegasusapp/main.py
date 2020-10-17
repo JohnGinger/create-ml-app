@@ -6,6 +6,7 @@ from pegasusapp.utils import destructure_s3_url
 import os.path as osp
 import subprocess
 import os
+
 app = typer.Typer()
 
 
@@ -79,11 +80,14 @@ def pull_code_and_unzip(filepath: str):
     # pip install -r "$1"/requirements.txt
     # python "$1"/train.py
     # '''
-    # subprocess.run(["cat", f'"{code}"', ">>", "/tmp/extracted_code/run.sh"])
-    # subprocess.run(["chmod", "+x", "/tmp/extracted_code/run.sh"])
+    # subprocess.run(["cat", f'"{code}"', ">>", "/tmp/extracted_code/pegasus_run.sh"])
+    # subprocess.run(["chmod", "+x", "/tmp/extracted_code/pegasus_run.sh"])
     # subprocess.run(["ls", "/tmp/extracted_code"])
 
-    subprocess.run(["bash", "/tmp/extracted_code/run.sh"], env={**os.environ, "S3_PREFIX": filepath})
+    subprocess.run(
+        ["bash", "/tmp/extracted_code/pegasus_run.sh"],
+        env={**os.environ, "S3_PREFIX": filepath},
+    )
 
     # def _build_command(command):
     #     return f"bash -c '{command}'"

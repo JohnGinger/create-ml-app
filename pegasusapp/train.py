@@ -29,6 +29,6 @@ def run_train(path_to_zip: str):
     typer.echo(f"Would now call docker container with env var {path_for_docker}")
 
     batch = boto3.client("batch")
-    command = "poetry install && pegasus pull_code_and_unzip".split(" ")
+    command = "pip install pegasusapp && pegasus pull_code_and_unzip".split(" ")
     command.append(f"{filepath}")
     batch.submit_job(jobName=filepath, jobQueue="general-job-queue", command=command)

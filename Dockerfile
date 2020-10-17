@@ -28,6 +28,8 @@ RUN curl "https://repo.anaconda.com/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.s
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
     rm -rf ~/.cache ~/miniconda.sh
 
+RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+
 ## split the conda installations because the dev boxes have limited memory
 #RUN /opt/conda/bin/conda create -n env -c conda-forge python=$PYTHONVERSION pip && \
 #    /opt/conda/bin/conda clean -a && \
@@ -46,13 +48,13 @@ RUN curl "https://repo.anaconda.com/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.s
 #ENV BASH_ENV=~/.env
 #SHELL ["/bin/bash", "-c"]
 
-RUN pip install poetry
-RUN pip install black
-
-COPY . /app
-WORKDIR /app
-
-RUN poetry install
+#RUN pip install poetry
+#RUN pip install black
+#
+#COPY . /app
+#WORKDIR /app
+#
+#RUN poetry install
 
 #
 #CMD /bin/bash ./run.sh

@@ -52,9 +52,8 @@ def delete():
 
 
 @app.command()
-def pull_code_and_unzip():
+def pull_code_and_unzip(filepath: str):
     """
     Pulls code from the S3 repository and runs it
     """
     typer.echo("Pulling code")
-

@@ -13,7 +13,7 @@ def zipdir(path, ziph):
 
 
 def run_train(path_to_zip: str):
-    filepath = f"ml-training/{__file__}/{datetime.now()}/"
+    filepath = f"ml-training/{__file__}/{datetime.datetime.now().timestamp()}/"
     s3_code_path = f"{filepath}/code.zip"
     typer.echo(f"Compressing {path_to_zip}")
 
@@ -21,7 +21,7 @@ def run_train(path_to_zip: str):
     zipdir(path_to_zip, zipf)
     zipf.close()
 
-    typer.echo(f"Uploading to s3 {path_to_zip}")
+    typer.echo(f"Uploading to s3 on path {s3_code_path}")
     s3 = boto3.resource("s3")
     s3.meta.client.upload_file(f"/tmp/code.zip", "gene", s3_code_path)
 

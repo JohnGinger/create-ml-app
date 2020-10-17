@@ -14,13 +14,13 @@
 from argparse import ArgumentParser
 from datetime import datetime
 import torch
+import os
 import pytorch_lightning as pl
 from torch.nn import functional as F
 from torch.utils.data import DataLoader, random_split
 from pytorch_lightning.callbacks import ModelCheckpoint
 from torchvision.datasets.mnist import MNIST
 from torchvision import transforms
-
 
 class LitClassifier(pl.LightningModule):
     def __init__(self, hidden_dim=128, learning_rate=1e-3):
@@ -96,10 +96,9 @@ def cli_main():
     # ------------
     # training
     # ------------
-    filepath = f's3://gene/ml-training/{__file__}/{datetime.now()}/'
-    filepath += 'sample-mnist-{epoch:02d}-{val_loss:.2f}'
+
     checkpoint_callback = ModelCheckpoint(
-        filepath=filepath
+        filepath=f'{os.environ["S3_PREFIX"]}/sample-mnist-{epoch:02d}-{val_loss:.2f}'
     )
     trainer = pl.Trainer.from_argparse_args(args, checkpoint_callback=checkpoint_callback)
     trainer.fit(model, train_loader, val_loader)

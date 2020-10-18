@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c7bb92b-a127-450c-847e-16e33afa31f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudformation/batch_iam_role.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pegasusapp/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/pegasusapp/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +32,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cloudformation" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/examples/mnist" />
     </key>
@@ -54,5 +59,9 @@
       <screen x="0" y="0" width="3840" height="2124" />
     </state>
     <state x="787" y="247" key="SettingsEditor/0.0.3840.2124@0.0.3840.2124" timestamp="1602946302350" />
+    <state x="1282" y="429" width="1275" height="1270" key="find.popup" timestamp="1602961696400">
+      <screen x="0" y="0" width="3840" height="2124" />
+    </state>
+    <state x="1282" y="429" width="1275" height="1270" key="find.popup/0.0.3840.2124@0.0.3840.2124" timestamp="1602961696400" />
   </component>
 </project>
